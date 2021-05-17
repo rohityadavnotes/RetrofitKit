@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/downloadActivityParentLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:descendantFocusability="beforeDescendants"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context=".DownloadFileActivity">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@id/bottomLinearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/containerConstraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/downloadHeadingTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="serif-monospace"
+                android:gravity="center"
+                android:text="@string/download_file_heading"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_20sdp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/numberProgressBar"
+                app:layout_constraintLeft_toRightOf="@+id/guidelineLeft"
+                app:layout_constraintRight_toLeftOf="@+id/guidelineRight"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.retrofit.kit.numberprogressbar.NumberProgressBar
+                android:id="@+id/numberProgressBar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layout_constraintBottom_toTopOf="@+id/downloadedFileLocationTextView"
+                app:layout_constraintLeft_toRightOf="@+id/guidelineLeft"
+                app:layout_constraintRight_toLeftOf="@+id/guidelineRight"
+                app:layout_constraintTop_toBottomOf="@+id/downloadHeadingTextView" />
+
+            <TextView
+                android:id="@+id/downloadedFileLocationTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="serif-monospace"
+                android:text="@string/downloaded_file_location"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/errorWhenDownloadingFileTextView"
+                app:layout_constraintLeft_toRightOf="@+id/guidelineLeft"
+                app:layout_constraintRight_toLeftOf="@+id/guidelineRight"
+                app:layout_constraintTop_toBottomOf="@+id/numberProgressBar" />
+
+            <TextView
+                android:id="@+id/errorWhenDownloadingFileTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="serif-monospace"
+                android:text="@string/error_when_downloading_file"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toRightOf="@+id/guidelineLeft"
+                app:layout_constraintRight_toLeftOf="@+id/guidelineRight"
+                app:layout_constraintTop_toBottomOf="@+id/downloadedFileLocationTextView" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineLeft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/_8sdp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineRight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/_8sdp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/bottomLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_45sdp"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/downloadFileButtonTextView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/button_background"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="serif-monospace"
+            android:gravity="center"
+            android:text="@string/download_file"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_15sdp" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

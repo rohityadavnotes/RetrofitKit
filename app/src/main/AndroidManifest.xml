@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.retrofit.kit">
+
+    <!-- Require Permissions -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="false"
+        android:fullBackupContent="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:theme="@style/AppBaseTheme"
+        android:usesCleartextTraffic="true"
+        tools:ignore="GoogleAppIndexingWarning"
+        tools:replace="android:allowBackup">
+        <!--
+        Prevents restarts activity when the below configuration changes.
+        android:configChanges="layoutDirection|uiMode|locale|orientation|screenSize......."
+        -->
+        <activity
+            android:name=".RequestTestActivity"
+            android:configChanges="layoutDirection|locale|keyboardHidden|orientation|screenSize|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppBaseTheme.NoActionBar"></activity>
+        <activity
+            android:name=".RetrofitPostRequestActivity"
+            android:configChanges="layoutDirection|locale|keyboardHidden|orientation|screenSize|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppBaseTheme.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".RetrofitGetRequestActivity"
+            android:configChanges="layoutDirection|locale|keyboardHidden|orientation|screenSize|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppBaseTheme.NoActionBar" />
+        <activity
+            android:name=".RetrofitPutRequestActivity"
+            android:configChanges="layoutDirection|locale|keyboardHidden|orientation|screenSize|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppBaseTheme.NoActionBar" />
+        <activity
+            android:name=".RetrofitPatchRequestActivity"
+            android:configChanges="layoutDirection|locale|keyboardHidden|orientation|screenSize|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppBaseTheme.NoActionBar" />
+        <activity
+            android:name=".RetrofitDeleteRequestActivity"
+            android:configChanges="layoutDirection|locale|keyboardHidden|orientation|screenSize|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppBaseTheme.NoActionBar" />
+        <activity
+            android:name=".DownloadFileActivity"
+            android:configChanges="layoutDirection|locale|keyboardHidden|orientation|screenSize|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppBaseTheme.NoActionBar" />
+        <activity
+            android:name=".UploadFileActivity"
+            android:configChanges="layoutDirection|locale|keyboardHidden|orientation|screenSize|screenLayout"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppBaseTheme.NoActionBar" />
+    </application>
+
+</manifest>

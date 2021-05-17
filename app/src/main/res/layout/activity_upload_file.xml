@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/uploadActivityParentLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:descendantFocusability="beforeDescendants"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context=".UploadFileActivity">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@id/bottomLinearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/containerConstraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/uploadHeadingTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="serif-monospace"
+                android:gravity="center"
+                android:text="@string/upload_file"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_20sdp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/numberProgressBar"
+                app:layout_constraintLeft_toRightOf="@+id/guidelineLeft"
+                app:layout_constraintRight_toLeftOf="@+id/guidelineRight"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.retrofit.kit.numberprogressbar.NumberProgressBar
+                android:id="@+id/numberProgressBar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textColor="@android:color/holo_red_dark"
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+                app:layout_constraintLeft_toRightOf="@+id/guidelineLeft"
+                app:layout_constraintRight_toLeftOf="@+id/guidelineRight"
+                app:layout_constraintTop_toBottomOf="@+id/uploadHeadingTextView" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                app:layout_constraintBottom_toTopOf="@+id/errorWhenUploadingFileTextView"
+                app:layout_constraintLeft_toRightOf="@+id/guidelineLeft"
+                app:layout_constraintRight_toLeftOf="@+id/guidelineRight"
+                app:layout_constraintTop_toBottomOf="@+id/numberProgressBar">
+
+                <TextView
+                    android:id="@+id/uploadFileFromThisLocationTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_weight="1.7"
+                    android:fontFamily="serif-monospace"
+                    android:text="@string/upload_file_from_this_location"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/_10sdp"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toRightOf="@+id/guideline_left"
+                    app:layout_constraintRight_toLeftOf="@+id/guideline_right"
+                    app:layout_constraintTop_toBottomOf="@+id/numberProgressBar" />
+
+                <ProgressBar
+                    android:id="@+id/prepareProgressBar"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.3"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/errorWhenUploadingFileTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="serif-monospace"
+                android:text="@string/error_when_uploading_file"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toRightOf="@+id/guidelineLeft"
+                app:layout_constraintRight_toLeftOf="@+id/guidelineRight"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineLeft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/_8sdp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineRight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/_8sdp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/bottomLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_45sdp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/uploadFileButtonTextView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/button_background"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="serif-monospace"
+            android:gravity="center"
+            android:text="@string/upload_file"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_15sdp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

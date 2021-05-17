@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">RetrofitKit</string>
+    <string name="response">Response</string>
+
+    <!-- DownloadActivity -->
+    <string name="download_file_heading">Download File Heading</string>
+    <string name="download_file">Download File</string>
+    <string name="error_when_downloading_file">Error When Downloading File :</string>
+    <string name="downloaded_file_location">Downloaded File Location :</string>
+
+    <!-- UploadActivity -->
+    <string name="upload_file_heading">Upload File Heading</string>
+    <string name="upload_file">Upload File</string>
+    <string name="error_when_uploading_file">Error When Uploading File :</string>
+    <string name="upload_file_from_this_location">Upload File From This Location :</string>
+</resources>
